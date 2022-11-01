@@ -23,12 +23,12 @@ async function CreateAcc() {
     let access_token = response.data.access_token;
     return await axios({
         method: "post",
-        url: "https://YourDomain.my.salesforce.com/services/data/v56.0/sobjects/Account/",
+        url: "https://[YourDomain].my.salesforce.com/services/data/v56.0/sobjects/[Object]/",
         headers: {
             Authorization: `Bearer ${access_token}`,
         },
         data: {
-            Name: "Test from VS Code", // This is the body part
+            Name: "Test from VS Code", // This is the body part //Name is the Filed name in the Object
         },
     });
 }
