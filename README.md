@@ -23,3 +23,4 @@
 </ul>
 
 <b>Then, you will recive an access token that you will use in the next requests</b>
+<b>For now you can create a new record ... and i will add new capabilities</b>
