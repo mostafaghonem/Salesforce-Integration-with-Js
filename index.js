@@ -65,11 +65,11 @@ async function queryData(query) {
 
 queryData("SELECT+Id+,+NAME+FROM+Account") //Example for Account Obj
     .then((res) => {
-        console.log(res.status);
+        console.log(res.status); //200 if successeded
 
         //iterate over records and print Account Names
         for (rec of res.data.records) {
             console.log(`Account Name :${rec.Name}`);
         }
     })
-    .catch((err) => console.error(err.response.status));
+    .catch((err) => console.error(err.response.status)); //4xx if fail
