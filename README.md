@@ -13,6 +13,8 @@
   </ul>
 </div>
 
+<hr style="border:2px solid gray">
+
 <b>Used Params for Authentication :</b>
 <ul>
     <li>Client ID</li>
@@ -23,6 +25,8 @@
 </ul>
 
 <b>Then, you will recive an access token that you will use in the next requests</b>
+
+<hr style="border:2px solid gray">
 
 <div><b>For now you can :-</b></div>
 <ul>
