@@ -8,7 +8,7 @@
       Auth Endpoints : <a href="">https://login.salesforce.com/services/oauth2/token?</a>
     </li>
     <li>
-      Create Record : <a href="">https://YourDomain.my.salesforce.com/services/data/v56.0/sobjects/Account/</a>
+      Create Record Endpoint: <a href="">https://YourDomain.my.salesforce.com/services/data/v56.0/sobjects/Account/</a>
     </li>
   </ul>
 </div>
@@ -23,3 +23,4 @@
 </ul>
 
 <b>Then, you will recive an access token that you will use in the next requests</b>
+<div>For now you can create a new record ... and i will add new capabilities</div>
