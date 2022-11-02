@@ -36,3 +36,40 @@ async function CreateAcc() {
 CreateAcc()
     .then((res) => console.log(res.status)) //if Succeeded //201
     .catch((err) => console.log(err.response.status)); //else //400
+
+// ======================================================
+function printRequest() {
+    //Print the Requests :-
+    axios.interceptors.request.use((request) => {
+        console.log("Starting Request", JSON.stringify(request, null, 2));
+        return request;
+    });
+}
+
+// printRequest();
+
+
+// =========================================================
+async function queryData(query) {
+    let response = await Auth();
+    let access_token = response.data.access_token;
+
+    return await axios({
+        method: "GET",
+        url: `https://mostafaghonem-dev-ed.my.salesforce.com/services/data/v56.0/query?q=${query}`,
+        headers: {
+            Authorization: `Bearer ${access_token}`,
+        },
+    });
+}
+
+queryData("SELECT+Id+,+NAME+FROM+Account") //Example for Account Obj
+    .then((res) => {
+        console.log(res.status);
+
+        //iterate over records and print Account Names
+        for (rec of res.data.records) {
+            console.log(`Account Name :${rec.Name}`);
+        }
+    })
+    .catch((err) => console.error(err.response.status));
