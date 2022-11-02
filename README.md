@@ -24,7 +24,7 @@
 
 <b>Then, you will recive an access token that you will use in the next requests</b>
 
-<div>For now you can :-</div>
+<div><b>For now you can :-</b></div>
 <ul>
   <li>create a new record</li>
   <li>Query Data with SOQL query</li>
