@@ -17,8 +17,8 @@ async function Auth() {
 
     return await axios.post(AuthURL.toString());
 }
-
-async function CreateAcc() {
+// =======================================================================
+async function createRecord() {
     let response = await Auth();
     let access_token = response.data.access_token;
     return await axios({
@@ -33,10 +33,24 @@ async function CreateAcc() {
     });
 }
 
-CreateAcc()
+createRecord()
     .then((res) => console.log(res.status)) //if Succeeded //201
     .catch((err) => console.log(err.response.status)); //else //400
-
+// ======================================================
+async function deleteRecord(id) {
+    let response = await Auth();
+    let access_token = response.data.access_token;
+    return await axios({
+        method: 'DELETE',
+        url: `https://[YourDomain].my.salesforce.com/services/data/v56.0/sobjects/[Object]/${id}`,
+        headers: {
+            Authorization: `Bearer ${access_token}`,
+        }
+    })
+}
+deleteRecord('ID of the record')
+    .then(res => console.log(res.status))
+    .catch(err => console.error(err.response.status));
 // ======================================================
 function printRequest() {
     //Print the Requests :-
