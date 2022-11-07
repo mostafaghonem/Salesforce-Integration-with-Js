@@ -8,7 +8,10 @@
       Auth Endpoints : <a href="">https://login.salesforce.com/services/oauth2/token?</a>
     </li>
     <li>
-      Create Record Endpoint: <a href="">https://[YourDomain].my.salesforce.com/services/data/v56.0/sobjects/Account/</a>
+      Create Record Endpoint: <a href="">https://[YourDomain].my.salesforce.com/services/data/v56.0/sobjects/[Object]/</a>
+    </li>
+    <li>
+      Delete Record Endpoint: <a href="">https://[YourDomain].my.salesforce.com/services/data/v56.0/sobjects/[Object]/id</a>
     </li>
     <li>
       Query Endpoint: <a href="">https://[YourDomain].my.salesforce.com/services/data/v56.0/query?q=[SoqlQuery]</a>
@@ -34,5 +37,6 @@
 <div><b>For now you can :-</b></div>
 <ul>
   <li>create a new record</li>
+  <li>Delete a record by ID</li>
   <li>Query Data with SOQL query</li>
 </ul>
