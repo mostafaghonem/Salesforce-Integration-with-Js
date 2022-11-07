@@ -36,6 +36,27 @@ async function createRecord() {
 createRecord()
     .then((res) => console.log(res.status)) //if Succeeded //201
     .catch((err) => console.log(err.response.status)); //else //400
+
+// ======================================================
+async function updateRecord(id, fieldName, fieldValue) {
+    let response = await Auth();
+    let access_token = response.data.access_token;
+    return await axios({
+        method: 'patch',
+        url: `https://[YourDomain].my.salesforce.com/services/data/v56.0/sobjects/[Object]/${id}`,
+        headers: {
+            Authorization: `Bearer ${access_token}`,
+        },
+        data: {
+            [fieldName]: fieldValue,
+        }
+    })
+}
+
+updateRecord('id', 'filed Name', 'field Value')
+    .then(res => console.log(res.status))
+    .catch(err => console.error(err.response));
+
 // ======================================================
 async function deleteRecord(id) {
     let response = await Auth();
@@ -49,8 +70,8 @@ async function deleteRecord(id) {
     })
 }
 deleteRecord('ID of the record')
-    .then(res => console.log(res.status))
-    .catch(err => console.error(err.response.status));
+    .then(res => console.log(res.status)) //204 if success
+    .catch(err => console.error(err.response.status)); // 4xx if fail
 // ======================================================
 function printRequest() {
     //Print the Requests :-
