@@ -21,7 +21,7 @@
 
 <hr style="border:2px solid gray">
 
-<b>Used Params for Authentication :</b>
+<b>Used Credentials for Authentication :</b>
 <ul>
     <li>Client ID</li>
     <li>Client Secret</li>
@@ -39,4 +39,5 @@
   <li>create a new record</li>
   <li>Delete a record by ID</li>
   <li>Query Data with SOQL query</li>
+  <li>Search with a word in all records for a specific Object</li>
 </ul>
