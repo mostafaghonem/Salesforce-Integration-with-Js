@@ -1,7 +1,7 @@
 var jsforce = require("jsforce");
 
-const username = 'username';
-const password = 'passwordSecurityToken';
+const { username, password } = require('./myCredentials.json')
+
 
 var conn = new jsforce.Connection();
 

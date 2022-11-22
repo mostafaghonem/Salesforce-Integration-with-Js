@@ -1,4 +1,4 @@
 .gitignore
 node_modules
 MyOrg.js
-# JsForce.js
+myCredentials.json
